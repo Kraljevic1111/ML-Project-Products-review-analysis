@@ -2,7 +2,7 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.compose import ColumnTransformer
 from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.ensemble import RandomForestClassifier
+from sklearn.linear_model import LogisticRegression
 from sklearn.pipeline import Pipeline
 from sklearn.metrics import classification_report
 from sklearn.metrics import accuracy_score
@@ -35,7 +35,7 @@ preprocesor = ColumnTransformer([
 
 pipeline= Pipeline([
        ("preprocesing", preprocesor),
-       ("Classifier",RandomForestClassifier())])
+       ("Classifier",LogisticRegression())])
 
 pipeline.fit(x,y)
 
